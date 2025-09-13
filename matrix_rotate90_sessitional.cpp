@@ -1,3 +1,8 @@
+/*code to rotate a matri by 90 degrees
+eg:- 1 2 3          to     7 4 1 
+     4 5 6                 8 5 2
+     7 8 9                 9 6 3
+*/
 #include <iostream>
 using namespace std;
 
@@ -30,3 +35,4 @@ int main(){
     }
     return 0;
 }
+
