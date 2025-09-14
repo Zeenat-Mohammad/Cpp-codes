@@ -1,3 +1,4 @@
+// A number is even or odd by using ternary operation
 #include <iostream>
 using namespace std;
 
@@ -7,3 +8,4 @@ int main(){
 	return 0;
 	
 }
+
