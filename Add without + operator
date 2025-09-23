@@ -1,0 +1,23 @@
+// C++ Program to add two numbers without using arithmetic operators 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// function to add two numbers without using arithmetic operators
+int sum(int a, int b) {
+    
+    // Iterate till there is no carry 
+    while (b != 0) { 
+        int carry = (a & b) << 1; 
+        a = a ^ b;
+        b = carry; 
+    } 
+    return a;
+} 
+
+int main() {
+    int a = -1, b = 2;
+  
+    cout << sum(a, b);
+    return 0; 
+}
