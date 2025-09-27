@@ -1,0 +1,13 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main(){
+    int n,sum=0;
+    cout<<"Enter a number: ";
+    cin>>n;
+    for(int i=0;i<n;i++){
+        sum+=pow(i,3);
+    }
+    cout<<"Sum of "<<n<<" cudes = "<<sum;
+    return 0;
+}
