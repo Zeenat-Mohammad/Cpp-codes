@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main(){
+    int num,copy,c=0,result=0,rem;
+    cout<<"Enter a number: ";
+    cin>>num;
+    copy=num;
+    while(num!=0){
+        c++;
+        num/=10;
+    }
+    num=copy;
+    while(num!=0){
+        rem=num%10;
+        c--;
+        result=result+rem*pow(10,c);
+        num/=10;
+    }
+    cout<<"Reverse of "<<copy<<" is "<<result;
+    return 0;
+}
