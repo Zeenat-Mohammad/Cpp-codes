@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int num1=0,num2=1;
+    int n,fab=0;
+    cout<<"Enter a number: ";
+    cin>>n;
+    cout<<"Fibonacci series:\n";
+    cout<<num1<<" "<<num2<<" ";
+    for(int i=2;i<n;i++){
+        fab=num1+num2;
+        num1=num2;
+        num2=fab;
+        cout<<fab<<" ";
+    }
+    return 0;
+}
