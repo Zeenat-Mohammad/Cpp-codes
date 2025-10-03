@@ -1,0 +1,59 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int cr,n;
+    cout<<"Enter nu. of rows and column in chess: ";
+    cin>>cr;
+    cout<<"Enter no. of size of a block: ";
+    cin>>n;
+    int c=0,count=0;
+    while(count<cr){
+    while(c<4){
+        for(int i=0;i<cr;i++){
+            if(i%2==0){
+                for(int j=0;j<n;j++){
+                    //for(int k=0;k<n;k++){
+                    cout<<"* ";
+                    //}
+                }
+            }
+            else{
+                for(int j=0;j<n;j++){
+                    //for(int k=0;k<n;k++){
+                    cout<<"  ";
+                    //}
+                }
+            }
+        }
+        c++;
+        cout<<endl;
+    }
+    c=0;
+    count++;
+    while(c<4){
+        for(int i=0;i<cr;i++){
+            if(i%2!=0){
+                for(int j=0;j<n;j++){
+                    //for(int k=0;k<n;k++){
+                    cout<<"* ";
+                    //}
+                }
+            }
+            else{
+                for(int j=0;j<n;j++){
+                    //for(int k=0;k<n;k++){
+                    cout<<"  ";
+                    //}
+                }
+            }
+        }
+        c++;
+        cout<<endl;
+    }
+    //cout<<"count = "<<count<<"  ";
+    count++;
+    c=0;
+    }
+    return 0;
+}
