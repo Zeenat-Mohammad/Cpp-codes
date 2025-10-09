@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(){
+    string s1;
+    cout<<"Enter a word: ";
+    cin>>s1;
+    int n=0;
+    bool flag;
+    for(int i=s1.size()-1;i>=0;i--){
+        if(s1[n++]==s1[i]){
+            flag=true;
+        }
+        else{
+            flag=false;
+            break;
+        }
+    }
+    if(flag==true){
+        cout<<s1<<" is a palindrome";
+    }
+    else{
+        cout<<s1<<" is not a palindrome";
+    }
+    return 0;
+}
