@@ -1,0 +1,28 @@
+// Write a program to concatenate two strings without using strcat().
+
+#include <iostream>
+#include <string> 
+using namespace std;
+
+int main() {
+    string s1;
+    cout<<"Enter a string: ";
+    getline(cin,s1);
+    string s2;
+    cout<<"Enter a string: ";
+    getline(cin,s2);
+    string s3;
+    int len=s1.size()+s2.size();
+    int  n=0,count=0;;
+    for(int  i=0;i<s1.size();i++){
+        s3[i]=s1[i];
+    }
+    for(int i=s1.size();i<len;i++){
+        s3[i]=s2[n++];
+    }
+    cout<<"String after sorting:\n";
+    for(int i=0;i<len;i++){
+        cout<<s3[i];
+    }
+    return 0;
+}
