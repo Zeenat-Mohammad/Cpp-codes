@@ -1,0 +1,38 @@
+// Write a program to compare two strings without using strcmp()
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void cmp(string s1,string s2){
+    bool flag;
+    if(s1.size()>s2.size()||s2.size()>s1.size()){
+        cout<<"Strings are not equal";
+        return;
+    }
+    for(int i=0;i<s1.size();i++){
+        if(s1[i]==s2[i]){
+            flag=true;
+        }
+        else{
+            flag=false;
+            break;
+        }
+    }
+    if(flag==true){
+        cout<<"Both the strings are equal";
+    }
+    else{
+        cout<<"Both the strings are not equal";
+    }
+}
+
+int main(){
+    string s1,s2;
+    cout<<"Enter first string: ";
+    getline(cin,s1);
+    cout<<"Enter second string: ";
+    getline(cin,s2);
+    cmp(s1,s2);
+    return 0;
+}
