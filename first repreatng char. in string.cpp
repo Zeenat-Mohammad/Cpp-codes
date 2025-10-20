@@ -1,0 +1,28 @@
+// Write a program to find the first repeating character in a string.
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(){
+    string s1;
+    cout<<"Enter a string: ";
+    getline(cin,s1);
+    int f=0;
+    for(int i=0;i<s1.size();i++){
+        for(int j=0;j<s1.size();j++){
+            if(s1[i]==s1[j]){
+                f++;
+            }
+        }
+        if(f>1){
+            cout<<s1[i]<<" is the first repreating character\n";
+            break;
+        }
+        else{
+            f=0;
+            continue;
+        }
+    }
+    return 0;
+}
