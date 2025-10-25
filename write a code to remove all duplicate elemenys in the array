@@ -1,0 +1,41 @@
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n,count=0;
+    cout<<"Enter size; ";
+    cin>>n;
+    int a[n];
+    cout<<"Enter elements: ";
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    for(int i=0;i<n;i++){
+        for(int j=i+1;j<4;j++){
+            if(a[i]==a[j]){
+                count++;
+            }
+        }
+    }
+    int size=n-count;
+    int dup[size],c=0;
+    bool flag=false;
+    for(int i=0;i<n;i++){
+        for(int j=i+1;j<size;j++){
+            if(a[i]==a[j]){
+                flag=true;
+                break;
+            }
+            else{
+                flag=false;
+            }
+        }
+        if(flag==false){
+            dup[c++]=a[i];
+        }
+    }
+    for(int i=0;i<size;i++){
+        cout<<dup[i]<<" ";
+    }
+}
