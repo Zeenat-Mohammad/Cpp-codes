@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class veg{
+    string color;
+    public:
+    void get(){
+        cout<<"Enter color: ";
+        cin>>color;
+    }
+    void display(){
+        cout<<"Color: ";
+        cout<<color<<endl;
+    }
+};
+
+class tomato:public veg{
+    float weight,size;
+    public:
+    void gdata(){
+        cout<<"Enter weight: ";
+        cin>>weight;
+        cout<<"Enter size: ";
+        cin>>size;
+    }
+    void display(){
+        cout<<"Weight: "<<weight<<endl;
+        cout<<"Size: "<<size<<endl;
+    }
+};
+
+int main(){
+    tomato t;
+    t.gdata();
+    t.get();
+    t.veg::display();
+    t.display();
+}
