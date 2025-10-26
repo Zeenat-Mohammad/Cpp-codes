@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int row,col;
+    cout<<"Enter no. of rows: ";
+    cin>>row;
+    cout<<"Enter no. of col: ";
+    cin>>col;
+    int mat[row][col];
+    cout<<"Enter elements of matrix:\n";
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            cin>>mat[i][j];
+        }
+    }
+    int max_row=mat[0][0];
+    cout<<"Maximum element in each row:\n";
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            if(max_row<mat[i][j]){
+                max_row=mat[i][j];
+            }
+        }
+        cout<<"Row "<<i<<": "<<max_row<<endl;
+    }
+    int max_col=mat[0][0];
+    cout<<"Maximum element in each column:\n";
+    for(int i=0;i<row;i++){
+        int j;
+        for(j=0;j<col;j++){
+            if(max_col<mat[j][i]){
+                max_col=mat[j][i];
+            }
+        }
+        cout<<"Column "<<i<<": "<<max_col<<endl;
+    }
+    return 0;
+}
