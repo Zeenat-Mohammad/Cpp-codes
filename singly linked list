@@ -1,0 +1,189 @@
+#include <iostream>
+using namespace std;
+
+class node{
+    int data;
+    node *next;
+public:
+    node(int x=0, node *n=NULL){
+        data = x;
+        next = n;
+    }
+    int getdata(){
+        return data;
+    }
+    node* getnext(){
+        return next;
+    }
+    void setdata(int x){
+        data = x;
+    }
+    void setnext(node *temp){
+        next = temp;
+    }
+};
+
+class sll{
+    int len;
+    node *head;
+    node *tail;
+public:
+    sll(node *head=NULL, node *tail=NULL){
+        this->head = head;
+        this->tail = tail;
+        len = 0;
+    }
+
+    bool isempty(){
+        return len == 0;
+    }
+
+    int size(){
+        return len;
+    }
+
+    void insert_head(int x){
+        node *n = new node(x, head);
+        head = n;
+        if(tail == NULL)
+            tail = head;
+        len++;
+    }
+
+    void delete_head(){
+        if(isempty()){
+            cout << "Empty!!\n";
+            return;
+        }
+        if(head == tail){
+            delete head;
+            head = tail = NULL;
+            len = 0;
+            return;
+        }
+        node *temp = head;
+        head = head->getnext();
+        delete temp;
+        len--;
+    }
+
+    void insert_tail(int x){
+        node *n = new node(x);
+        if(head == NULL){
+            head = tail = n;
+        } else {
+            tail->setnext(n);
+            tail = n;
+        }
+        len++;
+    }
+
+    void delete_tail(){
+        if(isempty()){
+            cout << "Empty!!\n";
+            return;
+        }
+        if(head == tail){
+            delete tail;
+            head = tail = NULL;
+            len = 0;
+            return;
+        }
+
+        node *temp = head;
+        while(temp->getnext() != tail){
+            temp = temp->getnext();
+        }
+
+        delete tail;
+        tail = temp;
+        tail->setnext(NULL);
+        len--;
+    }
+
+    void insert_at(int x, int pos){
+        if(pos < 1 || pos > len + 1){
+            cout << "Invalid position!\n";
+            return;
+        }
+
+        if(pos == 1){
+            insert_head(x);
+            return;
+        }
+
+        if(pos == len + 1){
+            insert_tail(x);
+            return;
+        }
+
+        node *n = new node(x);
+        node *temp = head;
+        int cnt = 1;
+
+        while(cnt < pos - 1){
+            temp = temp->getnext();
+            cnt++;
+        }
+
+        n->setnext(temp->getnext());
+        temp->setnext(n);
+        len++;
+    }
+    void delete_at(int pos){
+      if(isempty()){
+        return;
+      }
+      if(pos<1||pos>len){
+        return;
+      }
+      if(pos==1){
+        delete_head();
+        return;
+      }
+      if(pos==len){
+        delete_tail();
+        return;
+      }
+      int s=0;
+      node *prev=NULL;
+      node *temp=head;
+      while(s+1!=pos){
+        prev=temp;
+        temp=temp->getnext();
+        s++;
+      }
+      prev->setnext(temp->getnext());
+      delete temp;
+      len--;
+    }
+    void display(){
+        node *temp = head;
+        while(temp != NULL){
+            cout << temp->getdata() << " ";
+            temp = temp->getnext();
+        }
+        cout << "\n";
+    }
+};
+
+int main(){
+    sll s;
+    s.insert_head(10);
+    s.insert_head(23);
+    s.insert_head(61);
+    s.insert_head(19);
+    s.display();
+    s.delete_head();
+    s.display();
+    s.insert_tail(4);
+    s.display();
+    s.insert_at(45, 1);
+    s.insert_at(20, 3);
+    s.display();
+    s.delete_tail();
+    s.display();
+    s.delete_at(3);
+    s.display();
+    return 0;
+}
