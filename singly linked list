@@ -169,21 +169,28 @@ public:
 
 int main(){
     sll s;
+    cout<<"Inerting elements at the end:\n";
     s.insert_head(10);
     s.insert_head(23);
     s.insert_head(61);
     s.insert_head(19);
     s.display();
+    cout<<"Deleting element at the head:\n";
     s.delete_head();
     s.display();
+    cout<<"Inserting element at the tail:\n";
     s.insert_tail(4);
     s.display();
+    cout<<"Insert element at a particular position:\n";
     s.insert_at(45, 1);
     s.insert_at(20, 3);
     s.display();
+    cout<<"Deleting element at the tail:\n";
     s.delete_tail();
     s.display();
+    cout<<"Delete element at a particular position:\n";
     s.delete_at(3);
     s.display();
     return 0;
 }
+
