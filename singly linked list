@@ -169,7 +169,7 @@ public:
 
 int main(){
     sll s;
-    cout<<"Inerting elements at the end:\n";
+    cout<<"Inerting elements at the head:\n";
     s.insert_head(10);
     s.insert_head(23);
     s.insert_head(61);
